@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vending_machine</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <section class="colacola_logo">
+        <h1 class="ir_wa">당신의 음료수를 뽑아보세요 프로듀스colacola</h1>
+        <img src="./images/logo.png" alt="colacola 음료수 자판기" />
+      </section>
+    </header>
+    <main>
+      <article class="selectitem_art">
+        <section class="selectitem_items">
+          <h2 class="ir_wa">판매중인 음료수 목록</h2>
+          <ul class="selectitem_itemlist">
+            <li>
+              <button type="button" class="colastand_menucard">
+                <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
+                <strong>Original_Cola</strong>
+                <span class="menu_price">1000</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="colastand_menucard">
+                <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
+                <strong>Violet_Cola</strong>
+                <span class="menu_price">1000</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="colastand_menucard">
+                <img src="./images/Yellow_Cola.png" alt="옐로우 콜라" />
+                <strong>Yellow_Cola</strong>
+                <span class="menu_price">1000</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="colastand_menucard">
+                <img src="./images/Cool_Cola.png" alt="쿨 콜라" />
+                <strong>Cool_Cola</strong>
+                <span class="menu_price">1000</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="colastand_menucard">
+                <img src="./images/Green_Cola.png" alt="그린 콜라" />
+                <strong>Green_Cola</strong>
+                <span class="menu_price">1000</span>
+              </button>
+            </li>
+            <li>
+              <button type="button" class="colastand_menucard">
+                <img src="./images/Orange_Cola.png" alt="오렌지 콜라" />
+                <strong>Orange_Cola</strong>
+                <span class="menu_price">1000</span>
+              </button>
+            </li>
+          </ul>
+        </section>
+        <section class="selectitem_pricecalculate">
+          <h2 class="ir_wa">음료를 고르고 계산하기</h2>
+          <div class="pricecalculate_balance">
+            <span>잔액 :</span>
+            <span class="pricecalculate_balance_number"></span>
+          </div>
+          <div class="pricecalculate_change">
+            <button type="button">거스름돈 반환</button>
+          </div>
+          <div class="pricecalculate_income">
+            <input type="number" required placeholder="입금액 입력" />
+          </div>
+          <div><button type="button">입금</button></div>
+          <div class="pricecalculate_ordereditem">
+            <ul class="pricecalculate_ordereditem_list">
+              <li>asdfasdfasdf</li>
+            </ul>
+          </div>
+          <div class="pricecalculate_orderbutton">
+            <button type="button">획득</button>
+          </div>
+        </section>
+      </article>
+      <article></article>
+      <article></article>
+    </main>
+  </body>
+</html>
