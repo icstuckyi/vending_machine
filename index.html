@@ -16,74 +16,76 @@
     </header>
     <main>
       <article class="selectitem_art">
-        <section class="selectitem_items">
-          <h2 class="ir_wa">판매중인 음료수 목록</h2>
-          <ul class="selectitem_itemlist">
-            <li>
-              <button type="button" class="colastand_menucard">
-                <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
-                <strong>Original_Cola</strong>
-                <span class="menu_price">1000</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="colastand_menucard">
-                <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
-                <strong>Violet_Cola</strong>
-                <span class="menu_price">1000</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="colastand_menucard">
-                <img src="./images/Yellow_Cola.png" alt="옐로우 콜라" />
-                <strong>Yellow_Cola</strong>
-                <span class="menu_price">1000</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="colastand_menucard">
-                <img src="./images/Cool_Cola.png" alt="쿨 콜라" />
-                <strong>Cool_Cola</strong>
-                <span class="menu_price">1000</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="colastand_menucard">
-                <img src="./images/Green_Cola.png" alt="그린 콜라" />
-                <strong>Green_Cola</strong>
-                <span class="menu_price">1000</span>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="colastand_menucard">
-                <img src="./images/Orange_Cola.png" alt="오렌지 콜라" />
-                <strong>Orange_Cola</strong>
-                <span class="menu_price">1000</span>
-              </button>
-            </li>
-          </ul>
-        </section>
+        <h2 class="ir_wa">판매중인 음료수 목록</h2>
+        <ul class="selectitem_itemul">
+          <li>
+            <button type="button" class="colastand_menucard">
+              <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
+              <strong>Original_Cola</strong>
+              <span class="menu_price">1000</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="colastand_menucard">
+              <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
+              <strong>Violet_Cola</strong>
+              <span class="menu_price">1000</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="colastand_menucard">
+              <img src="./images/Yellow_Cola.png" alt="옐로우 콜라" />
+              <strong>Yellow_Cola</strong>
+              <span class="menu_price">1000</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="colastand_menucard">
+              <img src="./images/Cool_Cola.png" alt="쿨 콜라" />
+              <strong>Cool_Cola</strong>
+              <span class="menu_price">1000</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="colastand_menucard">
+              <img src="./images/Green_Cola.png" alt="그린 콜라" />
+              <strong>Green_Cola</strong>
+              <span class="menu_price">1000</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="colastand_menucard">
+              <img src="./images/Orange_Cola.png" alt="오렌지 콜라" />
+              <strong>Orange_Cola</strong>
+              <span class="menu_price">1000</span>
+            </button>
+          </li>
+        </ul>
         <section class="selectitem_pricecalculate">
           <h2 class="ir_wa">음료를 고르고 계산하기</h2>
           <div class="pricecalculate_balance">
-            <span>잔액 :</span>
-            <span class="pricecalculate_balance_number"></span>
+            <span>잔액 : </span>
+            <span class="pricecalculate_balance_number">1,000</span>
           </div>
-          <div class="pricecalculate_change">
-            <button type="button">거스름돈 반환</button>
-          </div>
-          <div class="pricecalculate_income">
-            <input type="number" required placeholder="입금액 입력" />
-          </div>
-          <div><button type="button">입금</button></div>
-          <div class="pricecalculate_ordereditem">
-            <ul class="pricecalculate_ordereditem_list">
-              <li>asdfasdfasdf</li>
-            </ul>
-          </div>
-          <div class="pricecalculate_orderbutton">
-            <button type="button">획득</button>
-          </div>
+          <button class="pricecalculate_change" type="button">
+            거스름돈 반환
+          </button>
+          <input
+            class="pricecalculate_input"
+            type="number"
+            required
+            placeholder="입금액 입력"
+          />
+          <button class="pricecalculate_income" type="button">입금</button>
+          <ul class="pricecalculate_ordereditem">
+            <li>
+              <div></div>
+            </li>
+            <li>
+              <div></div>
+            </li>
+          </ul>
+          <button class="pricecalculate_orderbutton" type="button">획득</button>
         </section>
       </article>
       <article></article>
