@@ -13,9 +13,14 @@
   box-sizing: inherit;
 }
 body {
-  /* display: relative; */
   background-color: #eae8fe;
   font-family: "Noto Sans KR", sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .ir_wa {
   display: block;
@@ -27,7 +32,10 @@ body {
 }
 
 /* components */
-/* .colacola_logo {} */
+/* 헤더, 로고 */
+header {
+  margin-bottom: 83px;
+}
 .colacola_logo img {
   display: block;
   width: 386px;
@@ -35,7 +43,9 @@ body {
   margin: 0px auto;
 }
 
-.selectitem_art {
+/* 음료 종류 고르기 */
+.selectitem_art,
+.acquireditems_art {
   width: 360px;
   height: 545px;
   border: none;
@@ -44,27 +54,25 @@ body {
   display: flex;
   flex-direction: column;
 }
-/* .selectitem_items {
-  width: 100%;
-  height: 50%; 
-  background-color: yellow;
-}*/
-
+.selectitem_art {
+  margin-right: 28px;
+  background-color: white;
+}
 .selectitem_itemul {
   width: 100%;
   height: auto;
-  background-color: yellow;
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin-bottom: 20px;
 }
-
+.selectitem_itemul:nth-child(2) {
+  position: relative;
+}
 .colastand_menucard {
   width: 94px;
   height: 130px;
-  box-sizing: border-box;
   border: none;
   border-radius: 10px;
   background-color: white;
@@ -72,7 +80,6 @@ body {
   padding: 9px 11px;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 9px;
-  margin: 0;
 }
 .colastand_menucard:active {
   border: 3px solid #6327fe;
@@ -93,27 +100,27 @@ body {
   content: "원";
 }
 
+/* 음료 가격 계산하기 */
 .selectitem_pricecalculate {
   width: 100%;
   height: 285px;
-  background-color: aquamarine;
   display: grid;
   grid-template-rows: 1fr 1fr 3fr;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
-
 .selectitem_pricecalculate * {
   font-family: "Noto Sans KR", sans-serif;
   font-size: 12px;
 }
 .selectitem_pricecalculate button {
-  background-color: white;
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
-
+.selectitem_pricecalculate button:active {
+  box-shadow: 0px 0px 5px 2px #eae8fe inset;
+}
 .pricecalculate_balance {
   width: 200px;
   height: 33px;
@@ -122,12 +129,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 6px 10px;
+  border-radius: 5px;
 }
 .pricecalculate_balance_number::after {
-  content: "원";
+  content: " 원";
 }
 .pricecalculate_change,
 .pricecalculate_income {
+  background-color: white;
   width: 94px;
   height: 33px;
 }
@@ -136,12 +146,18 @@ body {
   height: 33px;
   border: 1.5px solid #bdbdbd;
   border-radius: 5px;
+  padding: 6px 10px;
 }
 .pricecalculate_input:focus {
   outline: none;
 }
 .pricecalculate_input::placeholder {
   line-height: 1.8;
+}
+.pricecalculate_input::-webkit-outer-spin-button,
+.pricecalculate_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 .pricecalculate_ordereditem {
   width: 200px;
@@ -153,15 +169,208 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
-
+.pricecalculate_ordereditem::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.pricecalculate_ordereditem::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  background-color: white;
+}
+.pricecalculate_ordereditem::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 .pricecalculate_ordereditem li {
   width: 170px;
   height: 46px;
   background-color: white;
   border: none;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+}
+.pricecalculate_ordereditem li > figure {
+  display: flex;
+  align-items: center;
+}
+.pricecalculate_ordereditem li figcaption {
+  font-size: 9px;
 }
 
+.pricecalculate_ordereditem li img {
+  width: 18px;
+  height: 33px;
+  margin-right: 10px;
+}
 .pricecalculate_ordereditem li + li {
   margin-top: 6px;
+}
+.pricecalculate_ordereditem_number {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pricecalculate_orderbutton {
+  background-color: #6327fe;
+  color: white;
+}
+
+/* 소지금, 획득한 음료, 총금액 */
+.acquireditems_art {
+  background-color: transparent;
+  padding: 0;
+}
+.walletmoney_div {
+  width: 100%;
+  height: 50px;
+  padding: 9px 27px;
+  background-color: white;
+  border: none;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+.walletmoney_label {
+  /* box-sizing: border-box; */
+  width: 306px;
+  /* height: 32px; */
+  border: none;
+  border-radius: 5px;
+  padding: 6px 10px;
+  background-color: #eae8fe;
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+.walletmoney_label::after {
+  content: "원";
+  padding-left: 5px;
+  font-weight: bold;
+}
+#walletmoney_input {
+  width: 220px;
+  border: none;
+  font-size: 14px;
+  text-align: right;
+  font-family: inherit;
+  background-color: transparent;
+  margin-bottom: 3px;
+  font-weight: bold;
+}
+#walletmoney_input:focus {
+  outline: none;
+}
+#walletmoney_input::placeholder {
+  vertical-align: top;
+  font-weight: 500;
+}
+#walletmoney_input::-webkit-outer-spin-button,
+#walletmoney_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.acquireditems_wholecounts {
+  height: 467px;
+  padding: 9px 27px;
+  background-color: white;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* font-size: 14px; */
+}
+.acquireditems_wholecounts h3 {
+  margin: 20px 68px;
+}
+
+.acquireditems_wholecounts_drinks {
+  width: 306px;
+  height: 364px;
+  border: none;
+  border-radius: 5px;
+  background-color: #eae8fe;
+  padding: 12px 18px 12px 12px;
+}
+.acquireditems_wholecounts_drinks_ul {
+  height: inherit;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.acquireditems_wholecounts_drinks_ul li {
+  width: 276px;
+  height: 46px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  font-size: 9px;
+}
+.acquireditems_wholecounts_drinks_ul li > figure {
+  display: flex;
+  align-items: center;
+}
+.acquireditems_wholecounts_drinks_ul li + li {
+  margin-top: 6px;
+}
+.acquireditems_wholecounts_drinks_ul li img {
+  width: 18px;
+  height: 33px;
+  margin-right: 10px;
+}
+.wholecounts_drinks_number {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.acquireditems_wholecounts h4 {
+  margin-top: 8px;
+  font-size: 12px;
+  margin-left: auto;
+}
+.acquireditems_wholecounts h4 span::after {
+  content: " 원";
+}
+
+/* soldout */
+.soldout {
+  position: relative;
+}
+.soldout::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("/images/Sold-out.png");
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-position: 9px 27px;
+  position: absolute;
+  z-index: 10;
+}
+.soldout::after {
+  display: block;
+  content: "";
+  background-color: black;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
 }

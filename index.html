@@ -26,7 +26,7 @@
             </button>
           </li>
           <li>
-            <button type="button" class="colastand_menucard">
+            <button type="button" class="colastand_menucard soldout">
               <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
               <strong>Violet_Cola</strong>
               <span class="menu_price">1000</span>
@@ -79,17 +79,90 @@
           <button class="pricecalculate_income" type="button">입금</button>
           <ul class="pricecalculate_ordereditem">
             <li>
-              <div></div>
+              <figure>
+                <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
+                <figcaption>Original_Cola</figcaption>
+              </figure>
+              <div class="pricecalculate_ordereditem_number">
+                <strong>1</strong>
+              </div>
             </li>
             <li>
-              <div></div>
+              <figure>
+                <img src="./images/Green_Cola.png" alt="그린 콜라" />
+                <figcaption>Green_Cola</figcaption>
+              </figure>
+              <div class="pricecalculate_ordereditem_number">
+                <strong>2</strong>
+              </div>
             </li>
           </ul>
           <button class="pricecalculate_orderbutton" type="button">획득</button>
         </section>
       </article>
-      <article></article>
-      <article></article>
+      <article class="acquireditems_art">
+        <h2 class="ir_wa">소지금, 획득한 음료 갯수, 총금액</h2>
+        <section class="acquireditems_walletmoney">
+          <h3 class="ir_wa">소지금</h3>
+          <div class="walletmoney_div">
+            <label for="walletmoney_input" class="walletmoney_label">
+              소지금 :
+              <input
+                id="walletmoney_input"
+                type="number"
+                placeholder="소지금 입력"
+              />
+            </label>
+          </div>
+        </section>
+        <section class="acquireditems_wholecounts">
+          <h3>획득한 음료</h3>
+          <div class="acquireditems_wholecounts_drinks">
+            <ul class="acquireditems_wholecounts_drinks_ul">
+              <li>
+                <figure>
+                  <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
+                  <figcaption>Original_Cola</figcaption>
+                </figure>
+                <div class="wholecounts_drinks_number">
+                  <strong>1</strong>
+                </div>
+              </li>
+              <li>
+                <figure>
+                  <img src="./images/Green_Cola.png" alt="그린 콜라" />
+                  <figcaption>Green_Cola</figcaption>
+                </figure>
+                <div class="wholecounts_drinks_number">
+                  <strong>2</strong>
+                </div>
+              </li>
+              <li>
+                <figure>
+                  <img src="./images/Orange_Cola.png" alt="오렌지 콜라" />
+                  <figcaption>Orange_Cola</figcaption>
+                </figure>
+                <div class="wholecounts_drinks_number">
+                  <strong>1</strong>
+                </div>
+              </li>
+              <li>
+                <figure>
+                  <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
+                  <figcaption>Violet_Cola</figcaption>
+                </figure>
+                <div class="wholecounts_drinks_number">
+                  <strong>5</strong>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <h4 class="acquireditems_wholecounts_grossvalue">
+            총금액 :
+            <span>9,000</span>
+          </h4>
+        </section>
+      </article>
     </main>
   </body>
 </html>
