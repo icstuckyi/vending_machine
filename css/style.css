@@ -22,6 +22,10 @@ main {
   justify-content: center;
   align-items: center;
 }
+button {
+  background-color: white;
+}
+
 .ir_wa {
   display: block;
   overflow: hidden;
@@ -35,12 +39,14 @@ main {
 /* 헤더, 로고 */
 header {
   margin-bottom: 83px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .colacola_logo img {
   display: block;
   width: 386px;
   height: 164px;
-  margin: 0px auto;
 }
 
 /* 음료 종류 고르기 */
@@ -62,8 +68,8 @@ header {
   width: 100%;
   height: auto;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -73,17 +79,17 @@ header {
 .colastand_menucard {
   width: 94px;
   height: 130px;
-  border: none;
+  border: 3px solid transparent;
+  border-style: inset;
   border-radius: 10px;
-  background-color: white;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   padding: 9px 11px;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 9px;
+  overflow: hidden;
 }
 .colastand_menucard:active {
   border: 3px solid #6327fe;
-  border-radius: 10px;
 }
 .colastand_menucard img {
   width: 36px;
@@ -95,6 +101,7 @@ header {
   padding: 5px 15px;
   color: white;
   border-radius: 50px;
+  margin-top: 5px;
 }
 .colastand_menucard span::after {
   content: "원";
@@ -105,8 +112,8 @@ header {
   width: 100%;
   height: 285px;
   display: grid;
-  grid-template-rows: 1fr 1fr 3fr;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 33px 33px 106px;
+  grid-template-columns: 200px 94px;
   gap: 12px;
 }
 .selectitem_pricecalculate * {
@@ -122,8 +129,6 @@ header {
   box-shadow: 0px 0px 5px 2px #eae8fe inset;
 }
 .pricecalculate_balance {
-  width: 200px;
-  height: 33px;
   background-color: #eae8fe;
   font-weight: 500;
   display: flex;
@@ -135,15 +140,7 @@ header {
 .pricecalculate_balance_number::after {
   content: " 원";
 }
-.pricecalculate_change,
-.pricecalculate_income {
-  background-color: white;
-  width: 94px;
-  height: 33px;
-}
 .pricecalculate_input {
-  width: 200px;
-  height: 33px;
   border: 1.5px solid #bdbdbd;
   border-radius: 5px;
   padding: 6px 10px;
@@ -160,8 +157,6 @@ header {
   margin: 0;
 }
 .pricecalculate_ordereditem {
-  width: 200px;
-  height: 106px;
   padding: 12px 18px 12px 12px;
   background-color: #eae8fe;
   border: 1.5px solid #bdbdbd;
@@ -240,9 +235,7 @@ header {
   font-size: 14px;
 }
 .walletmoney_label {
-  /* box-sizing: border-box; */
   width: 306px;
-  /* height: 32px; */
   border: none;
   border-radius: 5px;
   padding: 6px 10px;
@@ -270,7 +263,6 @@ header {
   outline: none;
 }
 #walletmoney_input::placeholder {
-  vertical-align: top;
   font-weight: 500;
 }
 #walletmoney_input::-webkit-outer-spin-button,
@@ -286,7 +278,6 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* font-size: 14px; */
 }
 .acquireditems_wholecounts h3 {
   margin: 20px 68px;
@@ -336,6 +327,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 14px;
 }
 .acquireditems_wholecounts h4 {
   margin-top: 8px;
@@ -360,17 +352,49 @@ header {
   background-size: 50px;
   background-position: 9px 27px;
   position: absolute;
-  z-index: 10;
+  z-index: 1;
 }
 .soldout::after {
   display: block;
   content: "";
-  background-color: black;
-  border-radius: 5px;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  background-color: black;
   opacity: 0.8;
 }
+
+@media screen and (max-width: 360px) {
+  body {
+    background-color: white;
+    /* -ms-overflow-style: none; */
+  }
+  /* body::-webkit-scrollbar {
+    display: none;
+  } */
+  ::-webkit-scrollbar:vertical {
+    width: none;
+  }
+  main {
+    padding-left: 30px;
+    flex-wrap: wrap;
+  }
+
+  .selectitem_art {
+    align-content: space-around;
+    padding-bottom: 0px;
+    margin: 0;
+  }
+  .acquireditems_art {
+    padding: 0;
+    bottom: 0;
+  }
+  .walletmoney_div {
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* 모바일화면에서 스크롤 기능은 살리면서 스크롤바 영역은 감추는법 */
