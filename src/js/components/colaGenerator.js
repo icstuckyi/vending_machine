@@ -37,3 +37,5 @@ class ColaGenerator {
     this.itemList.appendChild(docFrag);
   }
 }
+
+export default ColaGenerator;

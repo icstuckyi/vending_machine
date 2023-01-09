@@ -14,4 +14,21 @@ class VendingMachine {
     this.gotList = myinfo.querySelector(".acquireditems_wholecounts_drinks_ul");
     this.txtTotal = myinfo.querySelector(".txt-total");
   }
+
+  // 선택한 음료수 목록 생성
+  stagedItemGenerator(target) {
+    const stagedItem = document.createElement("li");
+    stagedItem.dataset.item = target.dataset.item;
+    stagedItem.dataset.price = target.dataset.price;
+    stagedItem.innerHTML = `
+      <button type="button" class="btn-staged">
+        <img src="./src/images/${target.dataset.img}" alt="" class="img-item" />
+        <strong class="txt-item">${target.dataset.item}</strong>
+        <span class="num-counter">1</span>
+      </button>
+    `;
+    this.stagedList.appendChild(stagedItem);
+  }
 }
+
+export default VendingMachine;
