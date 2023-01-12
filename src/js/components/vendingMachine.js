@@ -31,6 +31,7 @@ class VendingMachine {
   }
 
   bindEvents() {
+    // 입금 버튼 기능
     this.btnPut.addEventListener("click", (event) => {
       const inputCost = parseInt(this.inputCostEl.value);
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
@@ -50,7 +51,18 @@ class VendingMachine {
         this.inputCostEl.value = null;
       }
     });
-    
+
+    // 거스름돈 반환 버튼 기능
+    this.btnReturn.addEventListener("click", (event) => {
+      const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
+      const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
+
+      if (balanceVal) {
+        this.myMoney.textContent =
+          new Intl.NumberFormat().format(balanceVal + myMoneyVal) + " 원";
+        this.balance.textContent = "원";
+      }
+    });
   }
 }
 
