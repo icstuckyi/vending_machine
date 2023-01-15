@@ -118,6 +118,42 @@ class VendingMachine {
     });
 
     // 획득 버튼 기능
+    this.btnGet.addEventListener("click", (event) => {
+      let isGot = false;
+      let totalPrice = 0;
+
+      // 내가 고른 음료수 목록과 이미 구입한 목록을 비교
+      for (const itemStaged of this.stagedList.querySelectorAll("li")) {
+        for (const itemGot of this.gotList.querySelectorAll("li")) {
+          let itemGotCount = itemGot.querySelector(".num-counter");
+          // 획득할 아이템이 이미 획득한 음료 리스트에 존재하는지 확인
+          if (itemStaged.dataset.item === itemGot.dataset.item) {
+            // 획득한 음료 리스트의 아이템 갯수 업데이트
+            itemGotCount.textContent =
+              parseInt(itemGotCount.textContent) +
+              parseInt(itemStaged.querySelector(".num-counter").textContent);
+            isGot = true;
+            break;
+          }
+        }
+        // 처음 획득하는 음료수라면
+        if (!isGot) {
+          this.gotList.appendChild(itemStaged);
+        }
+      }
+      // stagedList 목록의 내용을 초기화
+      this.stagedList.innerHTML = null;
+
+      // 획득한 음료 리스트를 순환하면서 총 금액을 계산
+      this.gotList.querySelectorAll("li").forEach((itemGot) => {
+        totalPrice +=
+          itemGot.dataset.price *
+          parseInt(itemGot.querySelector(".num-counter").textContent);
+      });
+      this.txtTotal.textContent = `총금액 : ${new Intl.NumberFormat().format(
+        totalPrice
+      )}원`;
+    });
   }
 }
 
