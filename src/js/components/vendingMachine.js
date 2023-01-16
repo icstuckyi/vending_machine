@@ -14,6 +14,9 @@ class VendingMachine {
     this.gotList = myinfo.querySelector(".acquireditems_wholecounts_drinks_ul");
     this.txtTotal = myinfo.querySelector(".txt-total");
   }
+  setup() {
+    this.bindEvents();
+  }
 
   // 선택한 음료수 목록 생성
   stagedItemGenerator(target) {
@@ -34,8 +37,10 @@ class VendingMachine {
     // 입금 버튼 기능
     this.btnPut.addEventListener("click", (event) => {
       const inputCost = parseInt(this.inputCostEl.value);
-      const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
+      const myMoneyVal = parseInt(this.myMoney.value);
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
+
+      console.log(myMoneyVal);
 
       if (inputCost) {
         // 입금액이 소지금보다 적다면
@@ -43,10 +48,9 @@ class VendingMachine {
           this.myMoney.textContent =
             //Intl.NumberFormat : 언어에 맞는 숫자 서식을 문자열로 반환합니다. IE11 부터 지원
             new Intl.NumberFormat().format(myMoneyVal - inputCost) + " 원";
-          this.balance.textContent =
-            new Intl.NumberFormat().format(
-              (balanceVal ? balanceVal : 0) + inputCost
-            ) + " 원";
+          this.balance.textContent = new Intl.NumberFormat().format(
+            (balanceVal ? balanceVal : 0) + inputCost
+          );
         } else {
           alert("소지금이 부족합니다.");
         }
@@ -60,9 +64,10 @@ class VendingMachine {
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
 
       if (balanceVal) {
-        this.myMoney.textContent =
-          new Intl.NumberFormat().format(balanceVal + myMoneyVal) + " 원";
-        this.balance.textContent = "원";
+        this.myMoney.textContent = new Intl.NumberFormat().format(
+          balanceVal + myMoneyVal
+        );
+        this.balance.textContent = "";
       }
     });
 
@@ -81,8 +86,9 @@ class VendingMachine {
 
         // 입금된 금액이 음료수 값보다 많거나 같을 경우(구매 가능)
         if (balanceVal >= targetElPrice) {
-          this.balance.textContent =
-            new Intl.NumberFormat().format(balanceVal - targetElPrice) + " 원";
+          this.balance.textContent = new Intl.NumberFormat().format(
+            balanceVal - targetElPrice
+          );
 
           // forEach 문을 사용할 경우 반복의 종료가 불가능하다 (return, break 작동안함). 모든 원소를 순환할 필요가 없다면 비효율적.
           // 클릭한 음료수가 내가 이미 선택한 아이템인지 탐색
@@ -107,7 +113,7 @@ class VendingMachine {
             targetEl.parentElement.classList.add("sold-out");
             const warning = document.createElement("em");
             warning.textContent = "해당 상품은 품절입니다.";
-            warning.classList.add(".ir");
+            warning.classList.add(".ir_wa");
             // em 요소를 button 요소 앞으로 배치
             targetEl.parentElement.insertBefore(warning, targetEl);
           }
@@ -150,9 +156,7 @@ class VendingMachine {
           itemGot.dataset.price *
           parseInt(itemGot.querySelector(".num-counter").textContent);
       });
-      this.txtTotal.textContent = `총금액 : ${new Intl.NumberFormat().format(
-        totalPrice
-      )}원`;
+      this.txtTotal.textContent = new Intl.NumberFormat().format(totalPrice);
     });
   }
 }

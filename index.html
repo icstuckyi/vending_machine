@@ -5,62 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vending_machine</title>
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
   </head>
   <body>
     <header>
       <section class="colacola_logo">
         <h1 class="ir_wa">당신의 음료수를 뽑아보세요 프로듀스colacola</h1>
-        <img src="./images/logo.png" alt="colacola 음료수 자판기" />
+        <img src="./src/images/logo.png" alt="colacola 음료수 자판기" />
       </section>
     </header>
     <main>
       <article class="selectitem_art">
         <h2 class="ir_wa">판매중인 음료수 목록</h2>
-        <ul class="selectitem_itemul">
-          <!-- <li>
-            <button type="button" class="colastand_menucard">
-              <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
-              <strong>Original_Cola</strong>
-              <span class="menu_price">1000</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="colastand_menucard soldout">
-              <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
-              <strong>Violet_Cola</strong>
-              <span class="menu_price">1000</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="colastand_menucard">
-              <img src="./images/Yellow_Cola.png" alt="옐로우 콜라" />
-              <strong>Yellow_Cola</strong>
-              <span class="menu_price">1000</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="colastand_menucard">
-              <img src="./images/Cool_Cola.png" alt="쿨 콜라" />
-              <strong>Cool_Cola</strong>
-              <span class="menu_price">1000</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="colastand_menucard">
-              <img src="./images/Green_Cola.png" alt="그린 콜라" />
-              <strong>Green_Cola</strong>
-              <span class="menu_price">1000</span>
-            </button>
-          </li>
-          <li>
-            <button type="button" class="colastand_menucard">
-              <img src="./images/Orange_Cola.png" alt="오렌지 콜라" />
-              <strong>Orange_Cola</strong>
-              <span class="menu_price">1000</span>
-            </button>
-          </li> -->
-        </ul>
+        <ul class="selectitem_itemul"></ul>
         <section class="selectitem_pricecalculate">
           <h2 class="ir_wa">음료를 고르고 계산하기</h2>
           <div class="pricecalculate_balance">
@@ -77,26 +34,7 @@
             placeholder="입금액 입력"
           />
           <button class="pricecalculate_income" type="button">입금</button>
-          <ul class="pricecalculate_ordereditem">
-            <!-- <li>
-              <figure>
-                <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
-                <figcaption>Original_Cola</figcaption>
-              </figure>
-              <div class="pricecalculate_ordereditem_number">
-                <strong>1</strong>
-              </div>
-            </li>
-            <li>
-              <figure>
-                <img src="./images/Green_Cola.png" alt="그린 콜라" />
-                <figcaption>Green_Cola</figcaption>
-              </figure>
-              <div class="pricecalculate_ordereditem_number">
-                <strong>2</strong>
-              </div>
-            </li> -->
-          </ul>
+          <ul class="pricecalculate_ordereditem"></ul>
           <button class="pricecalculate_orderbutton" type="button">획득</button>
         </section>
       </article>
@@ -118,44 +56,7 @@
         <section class="acquireditems_wholecounts">
           <h3>획득한 음료</h3>
           <div class="acquireditems_wholecounts_drinks">
-            <ul class="acquireditems_wholecounts_drinks_ul">
-              <!-- <li>
-                <figure>
-                  <img src="./images/Original_Cola.png" alt="오리지널 콜라" />
-                  <figcaption>Original_Cola</figcaption>
-                </figure>
-                <div class="wholecounts_drinks_number">
-                  <strong>1</strong>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="./images/Green_Cola.png" alt="그린 콜라" />
-                  <figcaption>Green_Cola</figcaption>
-                </figure>
-                <div class="wholecounts_drinks_number">
-                  <strong>2</strong>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="./images/Orange_Cola.png" alt="오렌지 콜라" />
-                  <figcaption>Orange_Cola</figcaption>
-                </figure>
-                <div class="wholecounts_drinks_number">
-                  <strong>1</strong>
-                </div>
-              </li>
-              <li>
-                <figure>
-                  <img src="./images/Violet_Cola.png" alt="바이올렛 콜라" />
-                  <figcaption>Violet_Cola</figcaption>
-                </figure>
-                <div class="wholecounts_drinks_number">
-                  <strong>5</strong>
-                </div>
-              </li> -->
-            </ul>
+            <ul class="acquireditems_wholecounts_drinks_ul"></ul>
           </div>
           <h4 class="acquireditems_wholecounts_grossvalue">
             총금액 :
@@ -164,6 +65,6 @@
         </section>
       </article>
     </main>
-    <script src="./js/index.js"></script>
+    <script src="./src/js/index.js" type="module"></script>
   </body>
 </html>

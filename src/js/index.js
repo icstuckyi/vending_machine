@@ -1,5 +1,5 @@
-import ColaGenerator from "./components/colaGenerator";
-import VendingMachine from "./components/vendingMachine";
+import ColaGenerator from "./components/colaGenerator.js";
+import VendingMachine from "./components/vendingMachine.js";
 
 const colaGenerator = new ColaGenerator();
 const vendingMachine = new VendingMachine();
