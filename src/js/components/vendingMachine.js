@@ -34,10 +34,31 @@ class VendingMachine {
   }
 
   bindEvents() {
+    // myMoney, inputCostEl input창에 콤마찍기 event
+    this.myMoney.addEventListener("keyup", (event) => {
+      let myMoneyVal = parseInt(this.myMoney.value.replaceAll(",", ""));
+      if (myMoneyVal) {
+        myMoneyVal = new Intl.NumberFormat().format(myMoneyVal);
+        this.myMoney.value = myMoneyVal;
+      } else {
+        return "";
+      }
+    });
+
+    this.inputCostEl.addEventListener("keyup", (event) => {
+      let inputCostVal = parseInt(this.inputCostEl.value.replaceAll(",", ""));
+      if (inputCostVal) {
+        inputCostVal = new Intl.NumberFormat().format(inputCostVal);
+        this.inputCostEl.value = inputCostVal;
+      } else {
+        return "";
+      }
+    });
+
     // 입금 버튼 기능
     this.btnPut.addEventListener("click", (event) => {
-      const inputCost = parseInt(this.inputCostEl.value);
-      const myMoneyVal = parseInt(this.myMoney.value);
+      const inputCost = parseInt(this.inputCostEl.value.replaceAll(",", ""));
+      const myMoneyVal = parseInt(this.myMoney.value.replaceAll(",", ""));
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
 
       console.log(myMoneyVal);
@@ -45,9 +66,9 @@ class VendingMachine {
       if (inputCost) {
         // 입금액이 소지금보다 적다면
         if (inputCost <= myMoneyVal && inputCost > 0) {
-          this.myMoney.textContent =
+          this.myMoney.value =
             //Intl.NumberFormat : 언어에 맞는 숫자 서식을 문자열로 반환합니다. IE11 부터 지원
-            new Intl.NumberFormat().format(myMoneyVal - inputCost) + " 원";
+            new Intl.NumberFormat().format(myMoneyVal - inputCost);
           this.balance.textContent = new Intl.NumberFormat().format(
             (balanceVal ? balanceVal : 0) + inputCost
           );
@@ -60,11 +81,11 @@ class VendingMachine {
 
     // 거스름돈 반환 버튼 기능
     this.btnReturn.addEventListener("click", (event) => {
-      const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
+      const myMoneyVal = parseInt(this.myMoney.value.replaceAll(",", ""));
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
 
       if (balanceVal) {
-        this.myMoney.textContent = new Intl.NumberFormat().format(
+        this.myMoney.value = new Intl.NumberFormat().format(
           balanceVal + myMoneyVal
         );
         this.balance.textContent = "";
