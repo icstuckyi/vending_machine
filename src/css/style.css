@@ -6,24 +6,31 @@
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 500;
 }
+
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  font-family: "Noto Sans KR", sans-serif;
 }
 body {
   background-color: #eae8fe;
-  font-family: "Noto Sans KR", sans-serif;
 }
+
 main {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0px 28px;
   justify-content: center;
   align-items: center;
 }
+
 button {
   background-color: white;
+  cursor: pointer;
 }
 
 .ir_wa {
@@ -54,66 +61,61 @@ header {
 .acquireditems_art {
   width: 360px;
   height: 545px;
-  border: none;
   background-color: white;
   padding: 31px 27px;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 50px;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
-.selectitem_art {
-  margin-right: 28px;
-}
+
 .selectitem_itemul {
-  width: 100%;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 20px;
+  /* width: 100%; */
+  /* grid-template-rows: repeat(2, 1fr); */
 }
 .selectitem_itemul > li {
-  width: 94px;
-  height: 130px;
-  border: none;
+  position: relative;
   border-radius: 10px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
-  padding: 9px 11px;
-  font-family: "Noto Sans KR", sans-serif;
-  font-size: 9px;
+  width: 94px;
+  height: 130px;
   overflow: hidden;
+  /* border: none; */
+  /* padding: 9px 11px; */
+  /* font-family: "Noto Sans KR", sans-serif; */
+  /* font-size: 9px; */
 }
 
-.selectitem_itemul strong {
-  font-size: 11px;
-}
-
-.selectitem_itemul > li button {
-  font-family: inherit;
-  border: none;
-  padding: 0;
+.selectitem_itemul .btn-item {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 9px 11px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
-.selectitem_itemul > li button img {
-  width: 36px;
-  height: 65px;
-}
-
-.selectitem_itemul > li button span {
-  display: inline-block;
-  background-color: #6327fe;
-  padding: 3px 10px;
   font-size: 11px;
-  color: white;
-  border-radius: 50px;
 }
 
 .selectitem_itemul > li:active {
   outline: 3px solid #6327fe;
+}
+
+.selectitem_itemul .btn-item .img-item {
+  width: 36px;
+  height: 65px;
+}
+
+.selectitem_itemul .btn-item .txt-price {
+  padding: 3px 10px;
+  color: white;
+  background-color: #6327fe;
+  border-radius: 50px;
 }
 
 /* 음료 가격 계산하기 */

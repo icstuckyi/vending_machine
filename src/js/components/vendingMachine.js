@@ -88,7 +88,7 @@ class VendingMachine {
         this.myMoney.value = new Intl.NumberFormat().format(
           balanceVal + myMoneyVal
         );
-        this.balance.textContent = "";
+        this.balance.textContent = 0;
       }
     });
 
@@ -131,10 +131,11 @@ class VendingMachine {
 
           // 상품이 소진되면 품절 표시
           if (parseInt(targetEl.dataset.count) === 0) {
-            targetEl.parentElement.classList.add("sold-out");
+            targetEl.parentElement.classList.add("soldout");
+            targetEl.disabled = true;
             const warning = document.createElement("em");
             warning.textContent = "해당 상품은 품절입니다.";
-            warning.classList.add(".ir_wa");
+            warning.classList.add("ir_wa");
             // em 요소를 button 요소 앞으로 배치
             targetEl.parentElement.insertBefore(warning, targetEl);
           }
