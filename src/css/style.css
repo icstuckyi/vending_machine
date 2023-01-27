@@ -64,8 +64,6 @@ header {
   background-color: white;
   padding: 31px 27px;
   margin-bottom: 50px;
-  /* display: flex; */
-  /* flex-direction: column; */
 }
 
 .selectitem_itemul {
@@ -73,8 +71,6 @@ header {
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 20px;
-  /* width: 100%; */
-  /* grid-template-rows: repeat(2, 1fr); */
 }
 .selectitem_itemul > li {
   position: relative;
@@ -83,10 +79,6 @@ header {
   width: 94px;
   height: 130px;
   overflow: hidden;
-  /* border: none; */
-  /* padding: 9px 11px; */
-  /* font-family: "Noto Sans KR", sans-serif; */
-  /* font-size: 9px; */
 }
 
 .selectitem_itemul .btn-item {
@@ -339,32 +331,21 @@ header {
 
 /* soldout */
 .soldout {
-  position: relative;
+  pointer-events: none;
 }
 .soldout::before {
-  display: block;
-  width: 100%;
-  height: 100%;
   content: "";
-  background-image: url("/images/Sold-out.png");
-  background-repeat: no-repeat;
-  background-size: 50px;
-  background-position: 9px 27px;
   position: absolute;
-  z-index: 1;
-}
-.soldout::after {
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  border-radius: 10px;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
-  background-color: black;
-  opacity: 0.8;
+  background: no-repeat center/60px 46px url(../images/Sold-out.png)
+    rgba(0, 0, 0, 0.8);
 }
 
+/* 반응형 디자인 */
 @media screen and (max-width: 360px) {
   body {
     background-color: white;
