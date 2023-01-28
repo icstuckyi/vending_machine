@@ -9,7 +9,6 @@
   font-family: "Noto Sans KR", sans-serif;
   font-weight: 500;
 }
-
 *,
 *::before,
 *::after {
@@ -19,7 +18,6 @@
 body {
   background-color: #eae8fe;
 }
-
 main {
   display: flex;
   flex-wrap: wrap;
@@ -27,12 +25,10 @@ main {
   justify-content: center;
   align-items: center;
 }
-
 button {
   background-color: white;
   cursor: pointer;
 }
-
 .ir_wa {
   display: block;
   overflow: hidden;
@@ -65,7 +61,6 @@ header {
   padding: 31px 27px;
   margin-bottom: 50px;
 }
-
 .selectitem_itemul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,7 +75,6 @@ header {
   height: 130px;
   overflow: hidden;
 }
-
 .selectitem_itemul .btn-item {
   width: 100%;
   height: 100%;
@@ -93,16 +87,13 @@ header {
   justify-content: space-between;
   font-size: 11px;
 }
-
 .selectitem_itemul > li:active {
   outline: 3px solid #6327fe;
 }
-
 .selectitem_itemul .btn-item .img-item {
   width: 36px;
   height: 65px;
 }
-
 .selectitem_itemul .btn-item .txt-price {
   padding: 3px 10px;
   color: white;
@@ -112,8 +103,6 @@ header {
 
 /* 음료 가격 계산하기 */
 .selectitem_pricecalculate {
-  width: 100%;
-  height: 285px;
   display: grid;
   grid-template-rows: 33px 33px 106px;
   grid-template-columns: 200px 94px;
@@ -180,32 +169,25 @@ header {
   background-color: transparent;
 }
 .pricecalculate_ordereditem li > button {
+  pointer-events: none;
   width: 170px;
-  height: 46px;
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 6px 10px;
-  font-family: inherit;
 }
 .pricecalculate_ordereditem .img-item {
-  display: flex;
-  align-items: center;
-  width: 18px;
+  float: left;
   height: 33px;
   margin-right: 10px;
 }
 .pricecalculate_ordereditem .txt-item {
+  float: left;
   font-size: 9px;
+  line-height: 33px;
 }
-
 .pricecalculate_ordereditem li + li {
   margin-top: 6px;
 }
 .num-counter {
+  float: right;
   width: 30px;
   height: 30px;
   border: 1px solid #bdbdbd;
@@ -214,7 +196,6 @@ header {
   justify-content: center;
   align-items: center;
 }
-
 .pricecalculate_orderbutton {
   background-color: #6327fe;
   color: white;
@@ -248,7 +229,6 @@ header {
   padding-left: 5px;
   font-weight: bold;
 }
-
 #walletmoney_input {
   width: 220px;
   border: none;
@@ -281,7 +261,6 @@ header {
 .acquireditems_wholecounts h3 {
   margin: 20px 68px;
 }
-
 .acquireditems_wholecounts_drinks {
   width: 306px;
   height: 364px;
@@ -293,7 +272,6 @@ header {
   overflow-x: hidden;
   overflow-y: auto;
 }
-
 .acquireditems_wholecounts_drinks_ul li > button {
   font-family: inherit;
   width: 265px;
@@ -319,7 +297,6 @@ header {
 .acquireditems_wholecounts_drinks_ul li + li {
   margin-top: 6px;
 }
-
 .acquireditems_wholecounts h4 {
   margin-top: 8px;
   font-size: 12px;
@@ -371,14 +348,3 @@ header {
     margin-bottom: 0;
   }
 }
-
-/* 모바일화면에서 스크롤 기능은 살리면서 스크롤바 영역은 감추는법??? 안먹힘...*/
-/* body{
-  -ms-overflow-style: none;
-}
-body::-webkit-scrollbar {
-  display: none;
-} */
-/* ::-webkit-scrollbar:vertical {
-  width: none;
-} */
