@@ -24,6 +24,7 @@ main {
   gap: 0px 28px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 button {
   background-color: white;
@@ -37,7 +38,14 @@ button {
   width: 1px;
   height: 1px;
 }
-
+.img-item {
+  height: 33px;
+  margin-right: 10px;
+}
+.txt-item {
+  font-size: 9px;
+  line-height: 33px;
+}
 /* components */
 /* 헤더, 로고 */
 header {
@@ -51,7 +59,6 @@ header {
   width: 386px;
   height: 164px;
 }
-
 /* 음료 종류 고르기 */
 .selectitem_art,
 .acquireditems_art {
@@ -142,11 +149,6 @@ header {
 .pricecalculate_input::placeholder {
   line-height: 1.8;
 }
-.pricecalculate_input::-webkit-outer-spin-button,
-.pricecalculate_input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 .pricecalculate_ordereditem {
   padding: 12px 18px 12px 12px;
   background-color: #eae8fe;
@@ -155,33 +157,14 @@ header {
   overflow-x: hidden;
   overflow-y: auto;
 }
-.pricecalculate_ordereditem::-webkit-scrollbar {
-  width: 5px;
-  background-color: transparent;
-}
-.pricecalculate_ordereditem::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-clip: padding-box;
-  border: 1px solid transparent;
-  background-color: white;
-}
-.pricecalculate_ordereditem::-webkit-scrollbar-track {
-  background-color: transparent;
-}
 .pricecalculate_ordereditem li > button {
   pointer-events: none;
   width: 170px;
   padding: 6px 10px;
 }
-.pricecalculate_ordereditem .img-item {
-  float: left;
-  height: 33px;
-  margin-right: 10px;
-}
+.pricecalculate_ordereditem .img-item,
 .pricecalculate_ordereditem .txt-item {
   float: left;
-  font-size: 9px;
-  line-height: 33px;
 }
 .pricecalculate_ordereditem li + li {
   margin-top: 6px;
@@ -232,9 +215,7 @@ header {
 #walletmoney_input {
   width: 220px;
   border: none;
-  font-size: 14px;
   text-align: right;
-  font-family: inherit;
   background-color: transparent;
   margin-bottom: 1.5px;
   font-weight: bold;
@@ -244,11 +225,6 @@ header {
 }
 #walletmoney_input::placeholder {
   font-weight: 500;
-}
-#walletmoney_input::-webkit-outer-spin-button,
-#walletmoney_input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
 }
 .acquireditems_wholecounts {
   height: 467px;
@@ -262,36 +238,28 @@ header {
   margin: 20px 68px;
 }
 .acquireditems_wholecounts_drinks {
-  width: 306px;
+  width: 100%;
   height: 364px;
   border-radius: 5px;
   background-color: #eae8fe;
-  padding: 12px 12px 12px 12px;
-}
-.acquireditems_wholecounts_drinks_ul {
-  overflow-x: hidden;
+  padding: 12px;
   overflow-y: auto;
 }
+.acquireditems_wholecounts_drinks::-webkit-scrollbar {
+  width: 10px;
+}
 .acquireditems_wholecounts_drinks_ul li > button {
-  font-family: inherit;
   width: 265px;
-  height: 46px;
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 6px 10px;
-  font-size: 14px;
   border: none;
   border-radius: 5px;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
   margin: 5px;
 }
-.acquireditems_wholecounts_drinks_ul .img-item {
-  display: flex;
-  align-items: center;
-  width: 18px;
-  height: 33px;
+.acquireditems_wholecounts_drinks_ul .img-item,
+.acquireditems_wholecounts_drinks_ul .txt-item {
+  float: left;
   margin-right: 10px;
 }
 .acquireditems_wholecounts_drinks_ul li + li {
@@ -322,29 +290,20 @@ header {
     rgba(0, 0, 0, 0.8);
 }
 
-/* 반응형 디자인 */
-@media screen and (max-width: 360px) {
-  body {
-    background-color: white;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-  main {
-    /* 스크롤바 영역(26px)패딩으로 상쇄 */
-    padding-left: 30px;
-    flex-wrap: wrap;
-  }
-  .selectitem_art {
-    align-content: space-around;
-    padding-bottom: 0px;
-    margin: 0;
-  }
-  .acquireditems_art {
-    padding: 0;
-    bottom: 0;
-  }
-  .walletmoney_div {
-    padding-top: 0;
-    margin-bottom: 0;
-  }
+/* scrollbar */
+.pricecalculate_ordereditem::-webkit-scrollbar,
+.acquireditems_wholecounts_drinks::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+.pricecalculate_ordereditem::-webkit-scrollbar-thumb,
+.acquireditems_wholecounts_drinks::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-clip: padding-box;
+  border: 1px solid transparent;
+  background-color: white;
+}
+.pricecalculate_ordereditem::-webkit-scrollbar-track,
+.acquireditems_wholecounts_drinks::-webkit-scrollbar-track {
+  background-color: transparent;
 }
